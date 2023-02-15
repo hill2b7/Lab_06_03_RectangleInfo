@@ -40,6 +40,7 @@ public class Main {
             if (sideC == sideA)
             {
                 sideC = in.nextDouble();
+                System.out.println("Both sides are qual");
             }
             else
             {
