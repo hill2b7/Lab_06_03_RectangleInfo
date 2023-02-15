@@ -1,79 +1,42 @@
 import java.util.Scanner;
 
-public class Main {
+public class Main
+{
     public static void main(String[] args)
     {
-        double sideA = 0;
-        double sideB = 0;
-        double sideC = 0;
-        double sideD = 0;
-        double perimeter = 0;
+
+        double length = 0;
+        double width = 0;
         double area = 0;
+        double perimeter = 0;
         String trash = "";
 
         Scanner in = new Scanner(System.in);
 
-        System.out.println("Enter the length of side A: ");
+        System.out.println("Enter the length of the rectangle: ");
         if (in.hasNextDouble())
         {
-            sideA = in.nextDouble();
-        }
-        else
-        {
-            trash = in.nextLine();
-            System.out.println("Invalid input for side A: " + trash);
-        }
-        System.out.println("Enter the length of side B: ");
-        if (in.hasNextDouble())
-        {
-            sideB = in.nextDouble();
-        }
-        else
-        {
-            trash = in.nextLine();
-            System.out.println("Invalid input for side B: " + trash);
-        }
-
-        System.out.println("Enter the length of side C: ");
-        if (in.hasNextDouble())
-        {
-            if (sideC == sideA)
+            length = in.nextDouble();
+            System.out.println("Enter the width of the rectangle: ");
+            if (in.hasNextDouble())
             {
-                sideC = in.nextDouble();
-                System.out.println("Both sides are qual");
+                width = in.nextDouble();
+                area = length * width;
+                perimeter = length * 2 + width * 2;
+                System.out.println("The area of the rectangle is " + area);
+                System.out.println("The perimeter of the rectangle is " + perimeter);
+
             }
             else
             {
-                System.out.println("A rectangle must have two equal sides ");
+                trash = in.nextLine();
+                System.out.println("You entered an incorrect value" + trash);
             }
         }
         else
         {
             trash = in.nextLine();
-            System.out.println("Invalid input for side C: " + trash);
+            System.out.println("You entered an incorrect value " + trash);
         }
-        System.out.println("Enter the length of side D: ");
-        if (in.hasNextDouble())
-        {
-            if (sideB != sideD)
-            {
-                System.out.println("A rectangle must have two equal sides ");
-            }
-            else
-            {
-                sideD = in.nextDouble();
-                perimeter = sideA + sideB + sideC + sideD;
-                area = sideA * sideB;
-                System.out.println("The perimeter is " + perimeter);
-                System.out.println("The area is " + area);
-            }
-        }
-        else
-        {
-            trash = in.nextLine();
-            System.out.println("Invalid input for side D: " + trash);
-        }
-
-
     }
 }
