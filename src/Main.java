@@ -37,7 +37,14 @@ public class Main {
         System.out.println("Enter the length of side C: ");
         if (in.hasNextDouble())
         {
-            sideC = in.nextDouble();
+            if (sideC == sideA)
+            {
+                sideC = in.nextDouble();
+            }
+            else
+            {
+                System.out.println("A rectangle must have two equal sides ");
+            }
         }
         else
         {
@@ -47,12 +54,18 @@ public class Main {
         System.out.println("Enter the length of side D: ");
         if (in.hasNextDouble())
         {
-
-            sideD = in.nextDouble();
-            perimeter = sideA + sideB + sideC + sideD;
-            area = sideA * sideB;
-            System.out.println("The perimeter is " + perimeter);
-            System.out.println("The area is " + area);
+            if (sideB != sideD)
+            {
+                System.out.println("A rectangle must have two equal sides ");
+            }
+            else
+            {
+                sideD = in.nextDouble();
+                perimeter = sideA + sideB + sideC + sideD;
+                area = sideA * sideB;
+                System.out.println("The perimeter is " + perimeter);
+                System.out.println("The area is " + area);
+            }
         }
         else
         {
